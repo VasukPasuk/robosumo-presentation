@@ -8,6 +8,7 @@
     position: relative;
     padding: 0 1rem;
     background: $bg-neutral-200;
+    //box-shadow: 0 4px 5px $bg-neutral-300;
     #introduction__header__icon {
       height: 64px;
       width: 64px;
@@ -19,6 +20,7 @@
       top: 53%;
       left: 3.5%;
       font-size: 0.9575rem;
+      color: $bg-neutral-700;
     }
   }
   .introduction__content {

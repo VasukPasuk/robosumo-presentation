@@ -17,17 +17,17 @@
       .pagination-block__images-wrapper {
         display: flex;
         flex-direction: row;
-        width: 900%;
         height: 100%;
-        transition: transform 0.5s ease;
+        transition: all 1s ease;
+        width: 100%;
+        translate: -300%;
         & > .image {
-          width: calc(900% / 9);
+          width: 100%;
           height: 100%;
           object-fit: cover;
-          background-position: center;
-          @for $i from 1 through 9 {
-            background-image: url("../../robo/slider-image#{$i}.jpg");
-          }
+          display: block;
+          flex-grow: 0;
+          flex-shrink: 0;
         }
       }
       .switch-image-block {

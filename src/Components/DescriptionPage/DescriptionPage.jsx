@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './DescriptionPage.style.scss';
-import { RiRobot2Fill } from "react-icons/ri";
+import {RiRobot2Fill} from "react-icons/ri";
 import {useInView} from "react-intersection-observer";
 import InformBlock from "../InformBlocks/InformBlock";
 
@@ -11,6 +11,7 @@ function DescriptionPage(props) {
   const [currentInfoBlock, setCurrentInfoBlock] = useState(1)
   const [stop, setStop] = useState(false)
   const [visible, setVisible] = useState(false)
+  
   useEffect(() => {
     const robot_animation_interval = setInterval(() => {
       setStop(prev => !prev)
@@ -20,6 +21,7 @@ function DescriptionPage(props) {
       clearInterval(robot_animation_interval)
     }
   }, [])
+  
   return (
     <section id="description-section">
       <div id="description-section__left-block">

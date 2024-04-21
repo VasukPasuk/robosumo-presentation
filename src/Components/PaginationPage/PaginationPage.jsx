@@ -1,25 +1,27 @@
 import React, {useEffect, useState} from 'react';
 import './PaginationPage.style.scss';
-import { FaArrowLeft, FaArrowRight  } from "react-icons/fa";
+import {FaArrowLeft, FaArrowRight} from "react-icons/fa";
 
 function PaginationPage(props) {
   const [currentImage, setCurrentImage] = useState(1);
+  
   useEffect(() => {
     const switch_interval = setInterval(() => {
-      setCurrentImage(prev => prev === 9 ?  1 : prev+1)
-    }, 4000)
+      setCurrentImage(prev => prev === 9 ? 1 : prev + 1)
+    }, 7000)
     return () => {
       clearInterval(switch_interval)
     }
   }, [])
+  
   const switchImageHandler = (e) => {
     const direction = e.target.dataset?.direction;
     switch (direction) {
       case 'forward':
-        setCurrentImage(prev => prev === 9 ?  1 : prev + 1)
+        setCurrentImage(prev => prev === 9 ? 1 : prev + 1)
         break;
       case 'backward':
-        setCurrentImage(prev => prev === 1 ?  9 : prev - 1)
+        setCurrentImage(prev => prev === 1 ? 9 : prev - 1)
         break;
       default:
         break;
@@ -31,10 +33,7 @@ function PaginationPage(props) {
         <div className={`pagination-block__images-carousel`}>
           <div
             className={`pagination-block__images-wrapper`}
-            style={{
-              // eslint-disable-next-line no-useless-concat
-              transform: `translateX(${`-` + `calc(900% / 9 * ${currentImage} - 1)` + `px`})`
-            }}
+            style={{translate: `${-100 * (currentImage - 1)}%`}}
           >
             {[...Array(9)].map((_, index) => (
               <img
