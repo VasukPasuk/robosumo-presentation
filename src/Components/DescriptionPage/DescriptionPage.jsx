@@ -29,7 +29,7 @@ function DescriptionPage(props) {
           {(!stop && visible) && (
             <div id='victory-text-title'>
               Перемога за другим роботом, <br/>
-              оскільки він виштовхнув за коло свого суперника
+              оскільки він виштовхнув за коло суперника
             </div>
           )
           }
