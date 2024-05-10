@@ -4,7 +4,5 @@ import Layout from './Components/Layout.jsx';
 import './style/_global.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Layout/>
-);
+root.render(<Layout/>);
 
